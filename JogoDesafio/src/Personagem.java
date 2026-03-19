@@ -7,6 +7,7 @@ public abstract class Personagem {
     private int vida;
     private int ataque;
     private int defesa;
+    private int derrotas;
 
 //    Construtores
 
@@ -21,17 +22,38 @@ public abstract class Personagem {
 
 //    Métodos
 
-    public void atacar (){
-
+    public void atacar (Personagem alvo){
+        IO.println(this.nome+ " executou um ataque normal em " +alvo.getNome());
+        alvo.receberDano(this.ataque);
     };
 
-    public void receberDano (int dano){
+    public void receberDano (int danoRecebido){
+        int danoReal = danoRecebido - this.defesa;
 
+        if (danoReal < 0){
+            danoReal = 0;
+        }
+
+        this.vida -= danoReal;
+
+        if (this.vida < 0){
+            this.vida = 0;
+        }
+
+        IO.println(this.nome+ " recebeu " +danoReal+ " de dano");
+        IO.println("Vida atual: " +this.vida);
     };
 
     public void mostrarStatus (){
-
+        IO.println(this.getNome()+ " - Status ");
+        IO.println("Vida = " +this.getVida());
+        IO.println("Ataque = " +this.getAtaque());
+        IO.println("Defesa = " +this.getDefesa());
     };
+
+    public void adicionarDerrota() {
+        this.derrotas++;
+    }
 
     public String getNome() {
         return nome;
@@ -63,5 +85,9 @@ public abstract class Personagem {
 
     public void setDefesa(int defesa) {
         this.defesa = defesa;
+    }
+
+    public int getDerrotas() {
+        return derrotas;
     }
 }

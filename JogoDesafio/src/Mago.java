@@ -12,8 +12,8 @@ public class Mago extends Personagem{
 //    Métodos
 
     @Override
-    public void atacar() {
-
+    public void atacar(Personagem alvo) {
+        super.atacar(alvo);
     }
 
     @Override
@@ -26,5 +26,12 @@ public class Mago extends Personagem{
         super.mostrarStatus();
     }
 
+    public void lancarMagia (Personagem alvo){
+        IO.println(this.getNome()+ " lançou magia em " +alvo.getNome());
+
+        int forcaMagia =  this.getAtaque() + (this.getAtaque() / 2 );
+
+        alvo.receberDano(forcaMagia);
+    }
 
 }
