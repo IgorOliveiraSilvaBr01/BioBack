@@ -7,7 +7,7 @@ public abstract class Personagem {
     private int vida;
     private int ataque;
     private int defesa;
-    private int derrotas;
+
 
 //    Construtores
 
@@ -51,14 +51,11 @@ public abstract class Personagem {
         IO.println("Defesa = " +this.getDefesa());
     };
 
-    public void adicionarDerrota() {
-        this.derrotas++;
-    }
-
     public String getNome() {
         return nome;
     }
 
+//    Getters e Setters
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -81,13 +78,5 @@ public abstract class Personagem {
 
     public int getDefesa() {
         return defesa;
-    }
-
-    public void setDefesa(int defesa) {
-        this.defesa = defesa;
-    }
-
-    public int getDerrotas() {
-        return derrotas;
     }
 }

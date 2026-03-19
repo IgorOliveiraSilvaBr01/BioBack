@@ -29,6 +29,6 @@ public class Guerreiro extends Personagem{
 
         int forcaAtkPesado = this.getAtaque() + (this.getAtaque() / 2);
 
-        receberDano(forcaAtkPesado);
+        alvo.receberDano(forcaAtkPesado);
     }
 }

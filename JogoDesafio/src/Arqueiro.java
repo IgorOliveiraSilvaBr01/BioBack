@@ -29,6 +29,6 @@ public class Arqueiro extends Personagem{
 
         int forcaDisparo = this.getAtaque() + (this.getAtaque() / 2);
 
-        receberDano(forcaDisparo);
+        alvo.receberDano(forcaDisparo);
     }
 }
