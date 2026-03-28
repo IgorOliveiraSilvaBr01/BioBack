@@ -74,4 +74,8 @@ public abstract class Conta {
 
     };
 
+    public void creditoParcelado (double valor){
+
+    };
+
 }

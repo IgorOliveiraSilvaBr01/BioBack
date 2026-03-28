@@ -29,8 +29,22 @@ public class ContaCorrente extends Conta{
             IO.println("Limite do Crédito: R$ " +getLimiteCredito() +" --- Valor do Pagamento: R$ " +valor);
             IO.println();
         } else {
-            IO.println(this.getTitular()+ " pagou com o cartão de crédito");
             IO.println("Valor do Pagamento: R$ " +valor);
+            IO.println("Pagamento Aprovado!");
+            IO.println();
+        }
+    }
+
+    @Override
+    public void creditoParcelado(double valor) {
+        super.creditoParcelado(valor);
+        if (valor >= 100){
+            IO.println("Valor do pagamento: R$" +valor);
+            IO.println("Parcelado em 4x sem juros!");
+            IO.println("Pagamento Aprovado!");
+            IO.println();
+        } else {
+            IO.println("Não é possível parcelar pagamentos com valor abaixo de R$ 100,00");
             IO.println();
         }
     }
@@ -38,9 +52,10 @@ public class ContaCorrente extends Conta{
     @Override
     public void boletoBancario(double valor) {
         super.boletoBancario(valor);
-        IO.println(this.getTitular() +" pagou a fatura do cartão com um boleto bancário.");
-        IO.println("O boleto deve ser pago em 1 semana.");
+        IO.println("Valor do pagamento: R$ " +valor);
+        IO.println("Pagamento Aprovado!");
         IO.println("Valor do boleto: R$ " +valor);
+        IO.println("Data de Vencimento: 30 dias (atraso: sujeito a multa)");
         IO.println();
     }
 }
