@@ -9,7 +9,7 @@ void main() { // Instanciando Objetos
 
     while (mago.getVida() > 0 && guerreiro.getVida() > 0 && arqueiro.getVida() > 0) {
         int selecaoPersonagem;
-        IO.println();
+        IO.println("---- HORA DA BATALHA! ----");
         Scanner sc1 = new Scanner(System.in);
         IO.println("Selecione um personagem:");
         IO.println(" 1 - Mago | 2 - Guerreiro | 3 - Arqueiro");
@@ -103,55 +103,40 @@ void main() { // Instanciando Objetos
     IO.println();
     IO.println("---- RANKING FINAL ----");
 
-//    Personagem[] ranking = {mago, guerreiro, arqueiro};
-//
-//    for ( int i = 0; i < 3; i++) {
-//        for (int j = i + 1; j < 3; j++) {
-//            if (ranking[j].getVida() > ranking[i].getVida()) {
-//                Personagem temporario = ranking[i];
-//                ranking[i] = ranking[j];
-//                ranking[j] = temporario;
-//            }
-//        }
-//    }
-//
-//    for ( int i = 0; i < 3; i++) {
-//        String status = ranking[i].getVida() > 0 ? "(Vida acima de 0)" : "(Vida zerada)";
-//
-//        IO.println((i + 1) + "º Lugar: " +ranking[i].getNome() + " - Vida: " +ranking[i].getVida() + " " +status);
-//    }
+    if (mago.getVida() >= guerreiro.getVida() && mago.getVida() >= arqueiro.getVida()) {
+        // Mago tem a maior vida
+        IO.println(mago.getNome() + " 1° Lugar -- Vida: " + mago.getVida());
 
+        if (guerreiro.getVida() >= arqueiro.getVida()) {
+            IO.println(guerreiro.getNome() + " 2° Lugar -- Vida: " + guerreiro.getVida());
+            IO.println(arqueiro.getNome() + " 3° Lugar -- Vida: " + arqueiro.getVida());
+        } else {
+            IO.println(arqueiro.getNome() + " 2° Lugar -- Vida: " + arqueiro.getVida());
+            IO.println(guerreiro.getNome() + " 3° Lugar -- Vida: " + guerreiro.getVida());
+        }
 
-//    if (mago.getVida() <= 0 || guerreiro.getVida() == 0 || arqueiro.getVida() == 0) {
-//        if (mago.getVida() <= 0) {
-//            IO.println(mago.getNome() + " 3° Lugar --- Vida: " + mago.getVida());
-//        } else if (guerreiro.getVida() <= 0) {
-//            IO.println(guerreiro.getNome() + " 3° Lugar --- Vida: " + guerreiro.getVida());
-//        } else if (arqueiro.getVida() <= 0) {
-//            IO.println(arqueiro.getNome() + " 3° Lugar --- Vida: " + arqueiro.getVida());
-//        }
-//    }
-//
-//
-//    if (mago.getVida() <= 50 || guerreiro.getVida() <= 50 || arqueiro.getVida() <= 50) {
-//        if (mago.getVida() <= 50) {
-//            IO.println(mago.getNome() + " 2° Lugar --- Vida: " + mago.getVida());
-//        } else if (guerreiro.getVida() <= 50) {
-//            IO.println(guerreiro.getNome() + " 2° Lugar --- Vida: " + guerreiro.getVida());
-//        } else if (arqueiro.getVida() <= 50) {
-//            IO.println(arqueiro.getNome() + " 2° Lugar --- Vida: " + arqueiro.getVida());
-//        }
-//    }
-//
-//
-//    if (mago.getVida() > 50 || guerreiro.getVida() > 50 || arqueiro.getVida() > 50) {
-//        if (mago.getVida() > 50) {
-//            IO.println(mago.getNome() + " 1° Lugar --- Vida: " + mago.getVida());
-//        } else if (guerreiro.getVida() > 50) {
-//            IO.println(guerreiro.getNome() + " 1° Lugar --- Vida: " + guerreiro.getVida());
-//        } else if (arqueiro.getVida() > 50) {
-//            IO.println(arqueiro.getNome() + " 1° Lugar --- Vida: " + arqueiro.getVida());
-//        }
-//    }
+    } else if (guerreiro.getVida() >= mago.getVida() && guerreiro.getVida() >= arqueiro.getVida()) {
+        // Guerreiro tem a maior vida
+        IO.println(guerreiro.getNome() + " 1° Lugar -- Vida: " + guerreiro.getVida());
 
+        if (mago.getVida() >= arqueiro.getVida()) {
+            IO.println(mago.getNome() + " 2° Lugar -- Vida: " + mago.getVida());
+            IO.println(arqueiro.getNome() + " 3° Lugar -- Vida: " + arqueiro.getVida());
+        } else {
+            IO.println(arqueiro.getNome() + " 2° Lugar -- Vida: " + arqueiro.getVida());
+            IO.println(mago.getNome() + " 3° Lugar -- Vida: " + mago.getVida());
+        }
+
+    } else {
+        // Arqueiro tem a maior vida
+        IO.println(arqueiro.getNome() + " 1° Lugar -- Vida: " + arqueiro.getVida());
+
+        if (mago.getVida() >= guerreiro.getVida()) {
+            IO.println(mago.getNome() + " 2° Lugar -- Vida: " + mago.getVida());
+            IO.println(guerreiro.getNome() + " 3° Lugar -- Vida: " + guerreiro.getVida());
+        } else {
+            IO.println(guerreiro.getNome() + " 2° Lugar -- Vida: " + guerreiro.getVida());
+            IO.println(mago.getNome() + " 3° Lugar -- Vida: " + mago.getVida());
+        }
+    }
 }
