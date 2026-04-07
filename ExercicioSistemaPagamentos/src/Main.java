@@ -1,7 +1,6 @@
 void main() {
-    ContaCorrente cc01 = new ContaCorrente(001, 001, "Igor", 500, 400);
-    ContaCorrente cc02 = new ContaCorrente(002, 002, "Heitor", 600, 800);
-    ContaSalario cs01 = new ContaSalario(002, 003, "Gustavo", 850, 0);
+    ContaCorrente cc01 = new ContaCorrente("0123", "001", "Igor", 500, 400);
+    ContaCorrente cc02 = new ContaCorrente("01234", "002", "Heitor", 600, 800);
 
     //cc01.pix(100, cc02);
 

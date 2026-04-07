@@ -1,7 +1,10 @@
 public class ContaCorrente extends Conta{
     // Constructors
-    public ContaCorrente(int numero, int agencia, String titular, double saldo, double limiteCredito) {
+    public ContaCorrente(String numero, String agencia, String titular, double saldo, double limiteCredito) {
         super(numero, agencia, titular, saldo, limiteCredito);
+    }
+
+    public ContaCorrente() {
     }
 
     // Métodos

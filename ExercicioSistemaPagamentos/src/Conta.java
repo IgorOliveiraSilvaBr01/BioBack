@@ -1,14 +1,15 @@
 public abstract class Conta {
     // Atributos
-    private int numero;
-    private int agencia;
+    private String numero;
+    private String agencia;
     private String titular;
     private double saldo;
     private double limiteCredito;
 
     // Constructor
 
-    public Conta(int numero, int agencia, String titular, double saldo, double limiteCredito) {
+
+    public Conta(String numero, String agencia, String titular, double saldo, double limiteCredito) {
         this.numero = numero;
         this.agencia = agencia;
         this.titular = titular;
@@ -20,19 +21,19 @@ public abstract class Conta {
 
     // Getters e Setters
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
-    public int getAgencia() {
+    public String getAgencia() {
         return agencia;
     }
 
-    public void setAgencia(int agencia) {
+    public void setAgencia(String agencia) {
         this.agencia = agencia;
     }
 
@@ -59,6 +60,7 @@ public abstract class Conta {
     public void setLimiteCredito(double limiteCredito) {
         this.limiteCredito = limiteCredito;
     }
+
 
     // Métodos
 
