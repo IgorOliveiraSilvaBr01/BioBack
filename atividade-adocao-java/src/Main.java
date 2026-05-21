@@ -27,8 +27,8 @@ void main() {
     labelTipo.setBounds(20, 170, 150, 40);
     tela.add(labelTipo);
 
-    JComboBox escolhaTipo = new JComboBox(Enum.values());
-    escolhaTipo.setBounds(20, 200, 150, 40);
+    JComboBox<Tipo> escolhaTipo = new JComboBox(Tipo.values());
+    escolhaTipo.setBounds(20, 200, 250, 40);
     tela.add(escolhaTipo);
 
     JLabel labelRaca = new JLabel("Raça:");
@@ -68,9 +68,9 @@ void main() {
         String raca = inputRaca.getText();
         String endereco = inputEndereco.getText();
         String numero = inputNumero.getText();
-        Enum tipos = (Enum)  escolhaTipo.getSelectedItem();
+        Tipo tipos = (Tipo)  escolhaTipo.getSelectedItem();
 
-
+        // try - tenta executar o código / catch - se o código não funcionar indica uma mensagem de erro
         try {
             // conexao com o banco
             // Connection conexao = new Conexao.conectar();
